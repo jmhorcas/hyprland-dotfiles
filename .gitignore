@@ -11,6 +11,7 @@
 !/Thunar/
 !README.md
 !.gitignore
+!my_programs.txt
 
 # Ignorar carpetas de caché dentro de las permitidas
 **/cache/

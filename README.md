@@ -1,9 +1,9 @@
 Crea una lista de los paquetes:
 
-`pacman -Qe | awk '{print $1}' > my_programs.txt`
+`paru -Qqe > my_programs.txt`
 
 Restaurar:
-`sudo pacman -S --needed - < my_programs.txt`
+`paru -S --needed - < my_programs.txt`
 
 
 Restaurar configuración:
