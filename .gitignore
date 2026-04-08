@@ -1,0 +1,18 @@
+# Ignorar todo por defecto
+/*
+
+# Pero dejar pasar estas carpetas específicas
+!/hypr/
+!/waybar/
+!/kitty/
+!/rofi/
+!/fastfetch/
+!/btop/
+!/Thunar/
+!README.md
+!.gitignore
+
+# Ignorar carpetas de caché dentro de las permitidas
+**/cache/
+**/GPUCache/
+**/*.log
