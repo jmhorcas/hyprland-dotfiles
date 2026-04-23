@@ -2,6 +2,7 @@
 /*
 
 # Pero dejar pasar estas carpetas específicas
+!/Dotfiles/
 !/hypr/
 !/waybar/
 !/kitty/

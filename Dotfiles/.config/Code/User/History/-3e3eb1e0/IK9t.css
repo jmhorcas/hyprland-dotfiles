@@ -1,0 +1,82 @@
+@import "../../.cache/wallust/colors-waybar.css";
+
+/* 1. Ajuste Global de Fuente */
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 11px; /* Tamaño general más pequeño */
+    font-weight: bold;
+}
+
+/* Barra base invisible */
+window#waybar {
+    background: transparent;
+}
+
+/* Las "Islas" con fondo cristalino */
+.modules-left, .modules-center, .modules-right {
+    background: rgba(15, 15, 15, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin: 5px 8px;
+    padding: 2px 10px; /* Reducido un poco para que sea más compacta */
+}
+
+/* Colores de texto usando Wallust */
+/* Quitamos el font-size de aquí para que hereden el del bloque global '*' */
+label, #clock, #battery, #cpu, #memory, #network, #pulseaudio {
+    color: @foreground;
+}
+
+/* Contenedor principal de Workspaces */
+#workspaces {
+    background: transparent;
+    margin: 0px 5px;
+}
+
+/* Cada botón de workspace */
+#workspaces button {
+    color: @color7;
+    padding: 0px 8px;
+    margin: 2px 2px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* El workspace donde estás parado actualmente */
+#workspaces button.active {
+    background: @color2; 
+    color: @background;
+    min-width: 40px; /* Reducido de 50 a 40 para que no sea tan ancho */
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+    border-radius: 10px;
+}
+
+/* Iconos de las ventanas dentro del workspace */
+/* Bajamos este valor de 14px a 12px para que no "estire" la barra hacia arriba */
+#workspaces button label {
+    font-size: 12px;
+}
+
+/* Efecto al pasar el ratón */
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#custom-power {
+    color: @color1; /* Color de Wallust (generalmente rojo o naranja) */
+    background: rgba(15, 15, 15, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin: 5px 8px 5px 0px; /* Un poco de margen */
+    padding: 0px 12px;
+    font-size: 16px; /* Para que el icono resalte */
+}
+
+#custom-power:hover {
+    background: @color1; /* Cambia el fondo al color de acento al pasar el ratón */
+    color: @background;
+    border: 1px solid @color1;
+}

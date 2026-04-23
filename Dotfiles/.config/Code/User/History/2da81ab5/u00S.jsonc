@@ -1,0 +1,227 @@
+{
+    "layer": "top",
+    "position": "top", // Puede ser bottom, left, right
+    //"height": 30,      // Altura en píxeles
+    
+    "modules-left": ["hyprland/window"],
+    "modules-center": ["group/notify",
+                       "hyprland/workspaces#rw",
+                       "custom/separator#dot-line",
+                       "clock", 
+                       "custom/separator#dot-line",
+                       "custom/weather"],
+    "modules-right": ["network", 
+                      "cpu", 
+                      "memory", 
+                      "battery", 
+                      "tray", 
+                      "custom/power"],
+
+    "group/notify": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "custom/swaync",
+            "transition-left-to-right": false
+            },
+        "modules": [
+            "custom/swaync",
+            "custom/dot_update",
+        ]
+    },
+    "custom/swaync": {
+        "tooltip": true,
+        "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+        "format": "{} {icon} ",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true,
+    },
+    "clock": {
+        "interval": 1,
+        //"format": " {:%I:%M %p}", // AM PM format
+        "format": " {:%H:%M}", // 24H
+        "format-alt": " {:L%H:%M   %Y, %d %B, %A}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click",
+        "interval": 3600,
+        "return-type": "json",
+        "exec": "$HOME/.config/hypr/scripts/WeatherWrap.sh",
+        "tooltip": true,
+    },
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/power": {
+        "format": "⏻", // Puedes usar " " si tienes Nerd Fonts instalada
+        "on-click": "wlogout", // O la ruta a tu script: "~/.config/hypr/scripts/Wlogout.sh"
+        "tooltip": "Logout menu"
+    },
+    "hyprland/workspaces#rw": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "sort-by-number": true,
+        "show-special": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "format": "{icon} {windows}",
+        "format-window-separator": " ",
+        "window-rewrite-default": " ",
+        "window-rewrite": {		
+            "title<.*amazon.*>": " ",
+            "title<.*reddit.*>": " ",
+
+            "class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": " ",
+            "class<zen>": "󰰷 ",
+            "class<waterfox|waterfox-bin>": " ",
+            "class<microsoft-edge>": " ",
+            "class<Chromium|Thorium|[Cc]hrome>": " ",
+            "class<brave-browser>": "🦁 ",
+            "class<tor browser>": " ",
+            "class<firefox-developer-edition>": "🦊 ",
+
+            "class<kitty|konsole|[Aa]lacritty>": " ",
+            "class<kitty-dropterm>": " ",
+            "class<com.mitchellh.ghostty>": " ",
+            "class<org.wezfurlong.wezterm>": " ",
+            "class<Warp|warp|dev.warp.Warp|warp-terminal>": "󰰭 ",
+
+            "class<[Tt]hunderbird|[Tt]hunderbird-esr>": " ",
+            "class<eu.betterbird.Betterbird>": " ",
+            "title<.*gmail.*>": "󰊫 ",
+
+            "class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": " ",
+            "class<discord|discord-canary|[Ww]ebcord|[Vv]esktop|com.discordapp.Discord|dev.vencord.Vesktop>": " ",
+            "class<[Ss]ignal|signal-desktop|org.signal.Signal>": "󰍩 ",
+            "title<.*Signal.*>": "󰍩 ",
+            "title<.*whatsapp.*>": " ",
+            "title<.*zapzap.*>": " ",
+            "title<.*messenger.*>": " ",
+            "title<.*facebook.*>": " ",
+            "title<.*Discord.*>": " ",
+
+            "title<.*ChatGPT.*>": "󰚩 ",
+            "title<.*deepseek.*>": "󰚩 ",
+            "title<.*qwen.*>": "󰚩 ",
+            "class<subl>": "󰅳 ",
+            "class<slack>": " ",
+
+            "class<mpv>": " ",
+            "class<celluloid|Zoom>": " ",
+            "class<Cider>": "󰎆 ",
+            "title<.*Picture-in-Picture.*>": " ",
+            "title<.*youtube.*>": " ",
+            "class<vlc>": "󰕼 ",
+            "class<[Kk]denlive|org.kde.kdenlive>": "🎬 ",
+            "title<.*Kdenlive.*>": "🎬 ",
+            "title<.*cmus.*>": " ",
+            "class<[Ss]potify>": " ",
+            "class<Plex>": "󰚺 ",
+
+            "class<virt-manager>": " ",
+            "class<.virt-manager-wrapped>": " ",
+            "class<remote-viewer|virt-viewer>": " ",
+            "class<virtualbox manager>": "💽 ",
+            "title<virtualbox>": "💽 ",
+            "class<remmina|org.remmina.Remmina>": "🖥️ ",
+
+            "class<VSCode|code|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
+            "class<dev.zed.Zed>": "󰵁",
+            "class<codeblocks>": "󰅩 ",
+            "title<.*github.*>": " ",
+            "class<mousepad>": " ",
+            "class<libreoffice-writer>": " ",
+            "class<libreoffice-startcenter>": "󰏆 ",
+            "class<libreoffice-calc>": " ",
+            "title<.*nvim ~.*>": " ",
+            "title<.*vim.*>": " ",
+            "title<.*nvim.*>": " ",
+            "title<.*figma.*>": " ",
+            "title<.*jira.*>": " ",
+            "class<jetbrains-idea>": " ",
+
+            "class<obs|com.obsproject.Studio>": " ",
+
+            "class<polkit-gnome-authentication-agent-1>": "󰒃 ",
+            "class<nwg-look>": " ",
+            "class<nwg-displays>": " ",
+            "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫 ",
+            "class<steam>": " ",
+            "class<thunar|nemo>": "󰝰 ",	
+            "class<Gparted>":"",
+            "class<gimp>": " ",
+            "class<emulator>": "📱 ",
+            "class<android-studio>": " ",
+            "class<org.pipewire.Helvum>": "󰓃",
+            "class<localsend>":"",
+            "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛",
+
+            "class<io.github.kolunmi.Bazaar>": " ",
+            "title<^Bazaar$>": " ",
+
+            "class<com.gabm.satty>": " ",
+            "title<^satty$>": " ",
+
+            "class<[Bb]ox[Bb]uddy|io.github.dvlv.boxbuddy|io.github.dvlv.BoxBuddy>": " ",
+            "title<.*BoxBuddy.*>": " ",
+
+            "title<Hyprland Keybinds>": " ",
+            "title<Niri Keybinds>": " ",
+            "title<BSPWM Keybinds>": " ",
+            "title<DWM Keybinds>": " ",
+            "title<Emacs Leader Keybinds>": " ",
+            "title<Kitty Configuration>": " ",
+            "title<WezTerm Configuration>": " ",
+            "title<Yazi Configuration>": " ",
+            "title<Cheatsheets Viewer>": " ",
+            "title<Documentation Viewer>": " ",
+            "title<^Wallpapers$>": " ",
+            "title<^Video Wallpapers$>": " ",
+            "title<^qs-wlogout$>": " ",
+        }
+	},
+    "custom/separator#dot-line": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+}
+

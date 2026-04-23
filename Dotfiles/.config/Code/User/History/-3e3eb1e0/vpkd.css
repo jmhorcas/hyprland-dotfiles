@@ -1,0 +1,50 @@
+@import "../../.cache/wallust/colors-waybar.css";
+
+/* Barra base invisible */
+window#waybar {
+    background: transparent;
+}
+
+/* Las "Islas" con fondo cristalino */
+/* Usamos rgba para que el fondo sea translúcido */
+.modules-left, .modules-center, .modules-right {
+    background: rgba(15, 15, 15, 0.4); /* Un gris muy oscuro al 40% de opacidad */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin: 5px 8px;
+    padding: 2px 12px;
+}
+
+/* Colores de texto usando Wallust */
+label, #clock, #battery, #cpu, #memory {
+    color: @foreground;
+}
+
+#workspaces {
+    background: transparent;
+    margin: 2px 5px;
+}
+
+#workspaces button {
+    padding: 0px 8px;
+    color: @color7; /* Color de Wallust */
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @background;
+    background: @color2; /* Resalta el workspace actual */
+    border-radius: 10px;
+    min-width: 40px;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}

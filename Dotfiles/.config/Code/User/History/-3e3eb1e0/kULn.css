@@ -1,0 +1,37 @@
+/* Importar colores de Wallust */
+@import "../../.cache/wallust/waybar.css";
+
+/* Fondo de la barra principal (totalmente transparente para que se vea partida) */
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+/* Estilo común para las 3 "Islas" o secciones */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: rgba(255, 255, 255, 0.1); /* Efecto cristal blanco suave */
+    /* Si prefieres que use los colores de tu wallpaper, usa:
+       background: alpha(@background, 0.7); */
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px; /* Bordes redondeados para estilo moderno */
+    padding: 2px 10px;
+    margin: 5px 0;
+    
+    /* El toque maestro: Sombra para dar profundidad */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Separación entre módulos individuales dentro de las islas */
+#workspaces,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#cpu,
+#memory {
+    padding: 0 10px;
+    color: @foreground;
+}

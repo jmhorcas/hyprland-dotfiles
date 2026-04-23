@@ -1,0 +1,22 @@
+/* Importar colores (ya que creamos el archivo vacío no dará error) */
+@import "../../.cache/wallust/colors-waybar.css";
+
+/* Barra invisible para que parezca partida */
+window#waybar {
+    background: transparent;
+}
+
+/* Las "Islas" estilo Crystal */
+.modules-left, .modules-center, .modules-right {
+    background: rgba(20, 20, 20, 0.6); /* Fondo oscuro transparente */
+    backdrop-filter: blur(10px);      /* Este es el efecto cristal */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 5px 10px;
+    padding: 2px 15px;
+}
+
+/* Color del texto */
+label {
+    color: white; /* O usa @foreground si wallust ya tiene colores */
+}

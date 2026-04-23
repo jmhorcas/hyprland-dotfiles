@@ -1,0 +1,56 @@
+* {
+    background-image: none;
+    transition: 200ms; /* Smooth hover transition */
+}
+
+window {
+    background-color: rgba(12, 12, 12, 0.1); /* Very transparent, let Hyprland blur do the work */
+}
+
+button {
+    color: #cdd6f4; /* Text color (Catppuccin Mocha Text) */
+    background-color: rgba(30, 30, 46, 0.5); /* Button background */
+    outline-style: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%; /* Adjust icon size */
+}
+
+button:focus,
+button:active,
+button:hover {
+    background-color: rgba(137, 180, 250, 0.2); /* Highlight color on hover */
+    border: 2px solid #89b4fa;
+    color: #89b4fa;
+}
+
+/* -----------------------------------------------------
+ * Icons - Using standard system icons or wlogout defaults
+ * ----------------------------------------------------- */
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
