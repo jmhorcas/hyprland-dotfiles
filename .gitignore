@@ -3,6 +3,7 @@
 
 # Pero dejar pasar estas carpetas específicas
 !/Dotfiles/
+!/Wallpapers/
 !/hypr/
 !/waybar/
 !/kitty/
