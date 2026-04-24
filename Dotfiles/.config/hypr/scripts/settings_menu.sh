@@ -4,7 +4,7 @@
 THEME="$HOME/.config/rofi/config.rasi"
 
 # Definimos las opciones del panel
-options="󰌌 View Keybinds\n󰸉 Change Wallpaper\n󰍹 Monitor Settings\n󰕾 Audio Settings\n󰤥 Network Settings\n Bluetooth Settings\n󰐥 Power Menu"
+options="󰌌 View Keybinds\n󰸉 Change Wallpaper\n󰍹 Monitor Settings\n󰕾 Audio Settings\n󰤥 Network Settings\n Bluetooth Settings\n Java Settings\n󰐥 Power Menu"
 
 # Lanzamos Rofi
 chosen=$(echo -e "$options" | rofi -dmenu -i -p "󰒓 Control Center" -config "$THEME")
@@ -24,6 +24,8 @@ case "$chosen" in
         nm-connection-editor ;;
     *Bluetooth*)
         blueman-manager ;;
+    *Java*)
+        ~/.config/hypr/scripts/JavaManager.sh ;;
     *Power*)
         # Un comando simple de apagado o tu script de logout
         wlogout || echo -e "Log out\nRestart\nShutdown" | rofi -dmenu -p "Power" ;;
