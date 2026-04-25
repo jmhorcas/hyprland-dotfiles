@@ -14,7 +14,8 @@ TEMP_ALL_SYSTEM=$(archlinux-java status)
 ACTIVE_VERSION_RAW=$(archlinux-java get)
 ACTIVE_VERSION_NUM=$(echo "$ACTIVE_VERSION_RAW" | grep -oE '[0-9]+')
 
-LATEST_VERSION=$(echo "$TEMP_ALL" "$TEMP_ALL_SYSTEM" | grep -oE '[0-9]+' | sort -nr | head -n1)
+LATEST_PACKAGE=$(pacman -Si "jdk-openjdk" | grep "Description" | cut -d ':' -f2- | head -n 1)
+LATEST_VERSION=$(echo "$LATEST_PACKAGE" | grep -oE '[0-9]+' | sort -nr | head -n1)
 
 ALL_AVAILABLE=$(echo "$TEMP_ALL" | awk -v lv="$LATEST_VERSION" '{
     v=$0; gsub(/[^0-9]/,"",v); 
