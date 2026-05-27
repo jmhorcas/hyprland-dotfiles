@@ -26,6 +26,7 @@ PACKAGES=(
     "resvg"             # SVG rendering tool (for yazi)
     "imagemagick"       # Image manipulation tool (for yazi)
     "trash-cli"         # Trash management tool (for yazi)
+    "libinih"           # INI file parser library (for yazi)
     "xdg-desktop-portal-hyprland"  # Portal for file dialogs and screenshots
     "waybar"            # Status bar
     "wl-clipboard"      # Clipboard manager
@@ -57,6 +58,7 @@ done
 # --------------------------------------------------------
 PACKAGES=(
     "dragon-drop"          # File transfer tool (for yazi)
+    "xdg-desktop-portal-termfilechooser-hunkyburrito-git"   # Portal for file dialogs in terminal applications (for yazi)
 )
 
 echo "⚙️ Installing packages..."
@@ -87,19 +89,42 @@ xdg-user-dirs-update
 # --------------------------------------------------------
 # Install the Recycle Bin plugin for Yazi
 ya pkg add uhs-robert/recycle-bin
+
+# Install the Compress plugin for Yazi
+ya pkg add KKV9/compress
+
+# Ficheros de configuración a copiar
 # ./config/fish/config.d/y.fish
+# ./config/fish/config.fish
 # ./config/yazi/yazi.toml
 # ./config/yazi/keymap.toml
 # ./config/yazi/init.lua
+# ./config/xdg-desktop-portal/portals.conf
+# ./config/xdg-desktop-portal-termfilechooser/config
+# ./config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+# ./local/share/applications/yazi.desktop
 
 
 
 # --------------------------------------------------------
 # Files and directories for Hyprland configuration
 # Fish
+
 # Hyprland
-# ./config/hypr/hyprland.conf
+# ./config/hypr/hyprland.lua
+# ./config/hypr/user_configs/*.lua
+# ./config/hypr/scripts/
+# ./config/hypr/scripts/help.sh
+# ./config/hypr/scripts/web_search.sh
+# ./config/hypr/scripts/settings_menu.sh
+
 # yazi
+
+
+# rofi
+# ./config/rofi/config-keybinds.rasi
+# ./config/rofi/config-search.rasi
+# ./config/rofi/config.rasi
 
 
 
