@@ -1,0 +1,44 @@
+/* Rofi Config for Google Search - Minimalist Pill */
+
+@import "~/.config/rofi/config.rasi"  
+
+/* ---- Window ---- */
+window {
+    width: 35%;                             /* Balanced width */
+    height: 60px;                           /* Perfect slim single-line height */
+    y-offset: 50px;                         
+    location: north;                        
+    
+    border: 2px;
+    border-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 30px;                    /* Perfect pill rounded corners */
+    
+    /* Using mainbox ensures internal elements don't overflow or break backgrounds */
+    children: [ "mainbox" ]; 
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+    /* We ONLY load the inputbar (where entry lives). Message is discarded for pure elegance */
+    children: [ "inputbar" ];
+    padding: 0px;
+    background-color: transparent;
+}
+
+/* ---- Inputbar ---- */
+inputbar {
+    children: [ "entry" ];
+    background-color: transparent;
+}
+
+/* ---- Entry ---- */ 
+entry {
+    expand: true;
+    placeholder: " 🔎 Google Search";
+    horizontal-align: 0.5;                  /* Centered text */
+    vertical-align: 0.5;                    /* Vertically centered */
+    padding: 0px 20px;                      /* Horizontal breathing room */
+    
+    /* Inherits transparent background so the main window theme controls the look */
+    background-color: transparent;          
+}
