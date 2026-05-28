@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Yazi
+Comment=File explorer with Yazi
+Exec=kitty -e yazi %u
+Icon=system-file-manager
+Terminal=false
+Categories=System;FileTransfer;FileManager;
+MimeType=inode/directory;
