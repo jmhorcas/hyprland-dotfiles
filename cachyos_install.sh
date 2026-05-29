@@ -118,13 +118,19 @@ ya pkg add KKV9/compress
 # ./config/hypr/scripts/web_search.sh
 # ./config/hypr/scripts/settings_menu.sh
 
+
+# ./config/hypr/scripts/wallpaper_select.sh  # todo
+# ./config/hypr/wallpaper_effects # todo
+
 # yazi
 
 
 # rofi
-# ./config/rofi/config-keybinds.rasi
-# ./config/rofi/config-search.rasi
+# ./config/rofi/config_keybinds.rasi
+# ./config/rofi/config_websearch.rasi
 # ./config/rofi/config.rasi
+# ./config/rofi/config_wallpaper.rasi
+
 
 
 

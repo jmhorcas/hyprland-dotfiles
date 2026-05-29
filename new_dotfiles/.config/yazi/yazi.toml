@@ -4,11 +4,15 @@ edit = [
 ]
 
 image = [
-	{ run = "imv %s", desc = "Imv (Image viewer)" },
-	{ run = "xdg-open %s", desc = "Default" }
+	{ run = 'imv "$@"', desc = "Imv (Image viewer)" },
+	{ run = 'xdg-open "$@"', desc = "Default" }
 ]
 
 [open]
 rules = [
-	{ mime = "image/*", use = ["image"] }
+	{ mime = "image/*", use = ["image"] },
+
+	{ mime = "text/*", use = ["edit"] },
+
+	{ mime = "*", use = ["open"] },
 ]
