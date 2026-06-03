@@ -11,8 +11,6 @@ image = [
 [open]
 rules = [
 	{ mime = "image/*", use = ["image"] },
-
 	{ mime = "text/*", use = ["edit"] },
-
-	{ mime = "*", use = ["open"] },
+	{ mime = "*", use = ["open"] }
 ]
