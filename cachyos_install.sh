@@ -101,6 +101,9 @@ ya pkg add uhs-robert/recycle-bin
 # Install the Compress plugin for Yazi
 ya pkg add KKV9/compress
 
+# Install the Clipboard plugin for Yazi
+ya pkg add XYenon/clipboard
+
 # Ficheros de configuración a copiar
 # ./config/fish/config.d/y.fish
 # ./config/fish/config.fish
