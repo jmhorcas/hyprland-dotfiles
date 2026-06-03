@@ -38,11 +38,16 @@ PACKAGES=(
     "hypridle"          # Idle management
     "brightnessctl"     # Brightness control (only for laptops)
     "hyprlock"          # Screen locker
-    "wlogout"           # Logout menu
+    "wlogout"           # Logout menuº
     "ttf-jetbrains-mono-nerd"   # Nerd Font for better icon support in terminal and status bar
     "ttf-victor-mono-nerd"      # Nerd Font for better icon support in terminal and status bar
     "imv"               # Image viewer
     "code"              # Visual Studio Code (for development and configuration editing)
+    "blueman-manager"   # Bluetooth management tool
+    "nm-connection-editor"  # NetworkManager connection editor (for managing Wi-Fi and other network connections)
+    "network-manager-applet"  # NetworkManager applet for system tray (for managing Wi-Fi and other network connections)
+    "nwg-displays"        # Display configuration tool (for managing multiple monitors and display settings) 
+    "xorg-xwayland"     # XWayland for running X11 applications on Wayland (for compatibility with applications that don't have native Wayland support)
 
 )
 
@@ -61,6 +66,7 @@ done
 # --------------------------------------------------------
 PACKAGES=(
     "dragon-drop"          # File transfer tool (for yazi)
+    "xdg-desktop-portal-termfilechooser-hunkyburrito-git"   # Portal for file dialogs in terminal applications (for yazi)
 )
 
 echo "⚙️ Installing packages..."
@@ -102,6 +108,8 @@ ya pkg add KKV9/compress
 # ./config/yazi/keymap.toml
 # ./config/yazi/init.lua
 # ./config/xdg-desktop-portal/portals.conf
+# ./config/xdg-desktop-portal-termfilechooser/config
+# ./config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
 # ./local/share/applications/yazi.desktop
 
 
