@@ -41,6 +41,8 @@ PACKAGES=(
     "wlogout"           # Logout menuº
     "ttf-jetbrains-mono-nerd"   # Nerd Font for better icon support in terminal and status bar
     "ttf-victor-mono-nerd"      # Nerd Font for better icon support in terminal and status bar
+    "ttf-nerd-fonts-symbols-common"  # Common symbols for Nerd Fonts (for better icon support in terminal and status bar)
+    "otf-font-awesome"   # Font Awesome for better icon support in terminal and status bar
     "imv"               # Image viewer
     "code"              # Visual Studio Code (for development and configuration editing)
     "blueman-manager"   # Bluetooth management tool
@@ -145,7 +147,9 @@ usermod -aG input $USER
 # ./config/rofi/config.rasi
 # ./config/rofi/config_wallpaper.rasi
 
-
+# waybar
+# ./config/waybar/config.jsonc
+# ./config/waybar/style.css
 
 
 
