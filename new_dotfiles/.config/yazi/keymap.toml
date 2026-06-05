@@ -6,17 +6,17 @@ desc = "Dragon-drop"
 [[mgr.prepend_keymap]]
 on   = [ "y" ]
 run  = [ "yank", "plugin clipboard -- --action=copy" ]
-desc = "Copiar al portapapeles externo"
+desc = "Copy to external clipboard"
 
 [[mgr.prepend_keymap]]
 on   = [ "<C-p>" ]
 run  = [ "plugin clipboard -- --action=paste" ]
-desc = "Pegar desde el portapapeles externo"
+desc = "Copy from external clipboard"
 
 [[mgr.prepend_keymap]]
 on   = [ "R", "b" ] 
 run  = "plugin recycle-bin"
-desc = "Papelera de reciclaje"
+desc = "Recicle bin"
 
 [[mgr.prepend_keymap]]
 on   = [ "c", "a", "a" ]
@@ -42,6 +42,11 @@ desc = "Archive selected files (compression level)"
 on   = [ "c", "a", "u" ]
 run  = "plugin compress -phl"
 desc = "Archive selected files (password+header+level)"
+
+[[mgr.prepend_keymap]]
+on = [ "<C-Enter>" ]
+run = "shell --orphan 'kitty micro \"$@\"'"
+desc = "Open in a new window"
 
 [[picker.prepend_keymap]]
 on   = [ "enter" ]

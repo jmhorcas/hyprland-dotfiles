@@ -1,6 +1,7 @@
 [opener]
 edit = [
-    { run = 'micro "$@"', block = true, desc = "Edit with Micro" }
+    { run = 'micro "$@"', block = true, desc = "Edit with Micro" },
+    { run = 'nano "$@"', block = true, desc = "Edit with Nano" }
 ]
 
 image = [
@@ -8,8 +9,22 @@ image = [
 	{ run = 'xdg-open "$@"', desc = "Default" }
 ]
 
+office = [
+	{ run = 'libreoffice --writer "$@"', orphan = true, desc = "LibreOffice Writer" }
+]
+
+open = [
+    { run = 'ya emit open', desc = "Open (Enter directory)" },
+    { run = 'kitty --directory "$@"', orphan = true, desc = "Open terminal here" }
+]
+
 [open]
+
 rules = [
+	{ mime = "inode/directory", use = ["directories"] },
+
+	{ mime = "text/rtf", use = ["office"] },
+	
 	{ mime = "image/*", use = ["image"] },
 	{ mime = "text/*", use = ["edit"] },
 	{ mime = "*", use = ["open"] }
