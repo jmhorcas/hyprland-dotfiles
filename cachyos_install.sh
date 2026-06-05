@@ -104,6 +104,9 @@ ya pkg add KKV9/compress
 # Install the Clipboard plugin for Yazi
 ya pkg add XYenon/clipboard
 
+# Add the user to the input group
+usermod -aG input $USER
+
 # Ficheros de configuración a copiar
 # ./config/fish/config.d/y.fish
 # ./config/fish/config.fish
@@ -114,7 +117,7 @@ ya pkg add XYenon/clipboard
 # ./config/xdg-desktop-portal-termfilechooser/config
 # ./config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
 # ./local/share/applications/yazi.desktop
-
+# ./config/mimeapps.list
 
 
 # --------------------------------------------------------
